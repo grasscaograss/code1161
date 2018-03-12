@@ -1,21 +1,37 @@
-"""Tidy up this file.
-
-This file runs, but it's a mess!
-Go through it and change it until there are no more linter errors or warnings.
-Make sure that your code still runs without any errors by pressing
-[ctrl]+[shift]+[b] as often as you think you need to.
 """
-from __future__ import division
-from __future__ import print_function
-print  ("hello! Let's get started")
-jobs=['get','this',
-'file','to','pass',
-  'the','linter']
-InOtherWords="make it show no linter errors"
-import os
-print(jobs)
-print(InOtherWords)
-print(1+1,"is smaller than",7*0.5,"is",(1+1)<(7*0.5),", which is a relief!")
-def usefulFunction () :
-    print(os.getcwd())
-usefulFunction( )
+Commenting skills:
+
+TODO: above every line of code comment what you THINK the line below does.
+TODO: execute that line and write what actually happened next to it.
+
+See example for first print statement
+"""
+import platform
+
+# I think this will print "hello! Let's get started" by calling the print function.
+print("hello! Let's get started")  # it printed "hello! Let's get started"
+# it makes a list in these words
+some_words = ['what', 'does', 'this', 'line', 'do', '?']
+
+for word in some_words: #it will print each words
+    print(word)#it printed each words
+
+for x in some_words: #it will print each words
+    print(x)#it printed each words
+
+#it will print the list ['what', 'does', 'this', 'line', 'do', '?']
+print(some_words)#it printed the list ['what', 'does', 'this', 'line', 'do', '?']
+
+#it will print some_words contains more than 3 words because the object in the list is more than 3
+if len(some_words) > 3:
+    print('some_words contains more than 3 words')#it printed some_words contains more than 3 words
+
+def usefulFunction(): #it will print the information of  system, node, release, version, machine, and processor.
+    """
+    You may want to look up what uname does before you guess
+    what the line below does:
+    https://docs.python.org/3/library/platform.html#platform.uname
+    """
+    print(platform.uname())#it printed "uname_result(system='Windows', node='Ryzen-1800X', release='10', version='10.0.17115', machine='AMD64', processor='AMD64 Family 23 Model 1 Stepping 1, AuthenticAMD')"
+
+usefulFunction()

@@ -21,7 +21,7 @@ def adder(a_number, another_number):
 
     Same as above, but with any two numbers.
     """
-    return (a_number+another_number)
+    return (a_number + another_number)
 
 
 def shout(a_string):
