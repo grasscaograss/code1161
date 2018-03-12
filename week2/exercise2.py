@@ -28,3 +28,5 @@ def week2exersise2():
 
 if __name__ == "__main__":
     print(week2exersise2())
+
+    "666"
