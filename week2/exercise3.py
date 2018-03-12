@@ -14,7 +14,7 @@ def is_odd(a_number):
     else:
         return True
 
-
+print("do is move")
 def fix_it(moves=True, should_move=True):
     """Decide what to do.
 
@@ -204,13 +204,13 @@ def loops_5():
     you'll come to see the pros and cons of each over time.
     """
   
-    list_result=[]
+    
     for i in range(10):
 	    list_temporary=[]
 	    for j in range(5):
-		    list_temporary.append(str((i,j)))
-	    list_result.append(list_temporary)
-    return (list_result)
+		    list_temporary.append(("i"+str(i),"j"+str(j)))
+	    
+    return (list_temporary)
 
 
    
