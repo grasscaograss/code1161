@@ -14,7 +14,7 @@ def is_odd(a_number):
     else:
         return True
 
-print("do is move")
+
 def fix_it(moves=True, should_move=True):
     """Decide what to do.
 
