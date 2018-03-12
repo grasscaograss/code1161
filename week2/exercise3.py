@@ -267,8 +267,12 @@ def loops_7():
     This is a hard problem. Use lots of experimentation and draw
     lots of diagrams!
     """
+    list_s=[]
     for i in range(5):
-        print(' '*(4-i) + '*'*(2*i+1))
+        list_1=[]
+        list_1.append(' '*(4-i) + '*'*(2*i+1))
+        list_s.append(list_1)
+    return list_s
 
 
 def lp(some_kind_of_list, exercise_name):
