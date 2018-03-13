@@ -248,8 +248,8 @@ def loops_7():
     list_s=[]
     for a in range (0,5):
         list_1=[]
-        for b in range (0，10)：
-            
+        list_1.append(" "*(4-a)+(2*a+1)*"*"+" "*(4-a))
+        list_s.append(list_1)
     return list_s
 
 
