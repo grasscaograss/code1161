@@ -58,12 +58,13 @@ def loops_1c(number_of_items=5, symbol="#"):
     a string with exacly one symbol in it.
     E.g.: ['#', '#', '#', '#', '#']
     """
-    list=[]
-    a=0
-    while a<= number_of_items:
-        list.append(str("#"))
-        a=a+1
-    return list
+    number_of_items=5
+    symbol="#"
+    list_1=[]
+    for a in range (number_of_items+1):
+        if a< number_of_items+1:
+            list_1.append(str(symbol))
+    return list_1
 
 
 def loops_2():
@@ -85,14 +86,14 @@ def loops_2():
           ]
     """
     list=[]
-    for i in range(0,10):
-        if i<10:
-            list.append("*")
-            list_s=[]
-    for i in range(0,10):
-        if i<10:
-            list_s.append(str(list)+"\n")
-    return list_s
+    for a in range(0,10):
+        if a<10:
+            List2=[]
+        for b in range(0,10):
+            if b<10:
+                List2.append('*')
+        list.append(List2)
+    return(list)
 
 
 
@@ -118,16 +119,13 @@ def loops_3():
     TIP: notice that this needs to to return strings of numbers,
          so call str(number) to cast.
     """
-
-    
     list_s=[]
-
     for num in range (0,10):
         list_1=[]
         for i in range (0,10):
             if i<10:
                 list_1.append(num)
-        list_s.append(str(list_1)+"\n")
+        list_s.append(list_1)
     return list_s
 
 
@@ -150,15 +148,13 @@ def loops_4():
     ]
     """
     list_1=[]
-    list_s=[]
-
-
     for i in range (0,10):
         if i<10:
             list_1.append(i)
     for num in range(10):
+        list_s=[]
         if num <10:
-            list_s.append(str(list_1)+"\n")
+            list_s.append(str(list_1))
     return list_s
 
 
