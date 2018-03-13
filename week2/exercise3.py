@@ -16,8 +16,8 @@ def is_odd(a_number):
 def fix_it(moves=True, should_move=True):
     """Decide what to do.
 
-    Using the engineering flowchart for the rules, return the apropriate
-    response to the input parameters.
+    Using the engineering flowchart (in week2 folder engineeringFlowchart.png)
+    for the rules, return the apropriate response to the input parameters.
     Use conditional statements: if, else, elif etc.
     This function should return either:
     "WD-40"
@@ -49,7 +49,6 @@ def loops_1a():
     return list
 
 
-
 def loops_1c(number_of_items=5, symbol="#"):
     """Respond to variables.
 
@@ -58,11 +57,10 @@ def loops_1c(number_of_items=5, symbol="#"):
     a string with exacly one symbol in it.
     E.g.: ['#', '#', '#', '#', '#']
     """
-    number_of_items=5
-    symbol="#"
+    
     list_1=[]
-    for a in range (number_of_items+1):
-        if a< number_of_items+1:
+    for a in range (number_of_items):
+        if a< number_of_items:
             list_1.append(str(symbol))
     return list_1
 
@@ -91,7 +89,7 @@ def loops_2():
             List2=[]
         for b in range(0,10):
             if b<10:
-                List2.append('*')
+                List2.append(str('*'))
         list.append(List2)
     return(list)
 
@@ -124,7 +122,7 @@ def loops_3():
         list_1=[]
         for i in range (0,10):
             if i<10:
-                list_1.append(num)
+                list_1.append(str(num))
         list_s.append(list_1)
     return list_s
 
@@ -144,17 +142,19 @@ def loops_4():
       ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'],
       ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'],
       ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'],
+      ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'],
+      ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'],
       ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
     ]
     """
+    list_s=[]
     list_1=[]
     for i in range (0,10):
         if i<10:
-            list_1.append(i)
+            list_1.append(str(i))
     for num in range(10):
-        list_s=[]
         if num <10:
-            list_s.append(str(list_1))
+            list_s.append(list_1)
     return list_s
 
 
@@ -182,13 +182,13 @@ def loops_5():
     """
   
     
-    for i in range(10):
-	    list_temporary=[]
-	    for j in range(5):
-		    list_temporary.append(("i"+str(i),"j"+str(j)))
-	    
-    return (list_temporary)
-
+    list_1=[]
+    for a in range(0,10):
+        list_2=[]
+        for b in range(0,5):
+            list_2.append('(i'+str(a)+', j'+str(b)+')')
+        list_1.append(list_2)
+    return(list_1)
 
    
 
@@ -213,11 +213,12 @@ def loops_6():
     TIP: look out for the starting condition.
     """
     list_1=[]
-    list_2=[]
-    for i in range(10):
-        list_1.append(i)
-        list_2.append(str(list_1)+"\n")
-    return list_2
+    for i in range(0,10):
+        list_2=[]
+        for j in range(0,i+1):
+            list_2.append(str(j))
+        list_1.append(list_2)
+    return list_1
 
 
             
@@ -245,10 +246,10 @@ def loops_7():
     lots of diagrams!
     """
     list_s=[]
-    for i in range(5):
+    for a in range (0,5):
         list_1=[]
-        list_1.append(' '*(4-i) + '*'*(2*i+1))
-        list_s.append(list_1)
+        for b in range (0，10)：
+            
     return list_s
 
 

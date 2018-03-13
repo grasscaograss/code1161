@@ -19,4 +19,8 @@ temp_completion_log
 maps/nswlocalitypolygonshp\.zip
 
 venv/
+<<<<<<< HEAD
 mugshot.png
+=======
+.vscode/
+>>>>>>> 606feff9244c5f759bdf4a0b9197a8b506743ea5
