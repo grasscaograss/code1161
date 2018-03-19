@@ -13,8 +13,10 @@ def loop_ranger(start, stop=None, step=1):
     Do this using any method apart from just using range()
     """
     list_1=[]
-    for a in range(start, stop）
+    a=start
+    while a< stop:
         list_1.append(a)
+        a+=step
     return list_1
         
               
@@ -25,7 +27,12 @@ def lone_ranger(start, stop, step):
 
     Look up the docs for range() and wrap it in a 1:1 way
     """
-    pass
+    list_1=[]
+    a=start
+    while a< stop:
+        list_1.append(a)
+        a+=step
+    return list_1
 
 
 def two_step_ranger(start, stop):
@@ -34,7 +41,12 @@ def two_step_ranger(start, stop):
     Sometimes you want to hide complexity.
     Make a range function that always has a step size of 2
     """
-    pass
+    list_1=[]
+    a=start
+    while a< stop:
+        list_1.append(a)
+        a+=2
+    return list_1
 
 
 def stubborn_asker(low, high):
@@ -43,7 +55,19 @@ def stubborn_asker(low, high):
     Ask for a number, and if the response is outside the bounds keep asking
     until you get a number that you think is OK
     """
-    pass
+    i=  int(input('Enter a number: '))
+
+    while True:
+        if i < high and i > low:
+            return i
+            break
+        else:
+            i=int(input('Enter again: '))
+            continue
+
+
+
+
 
 
 def not_number_rejector(message):
@@ -53,7 +77,16 @@ def not_number_rejector(message):
     "six", "8!") then throw it out and ask for an actual number.
     When you do get a number, return it.
     """
-    pass
+    i= input('Enter a number: ')
+
+    while True:
+        if i.isdigit()==True:
+            return i
+            break
+        else:
+            i=input('Enter again: ')
+            continue
+
 
 
 def super_asker(low, high):
@@ -62,7 +95,16 @@ def super_asker(low, high):
     Combine stubborn_asker and not_number_rejector to make a function
     that does it all!
     """
-    pass
+    i= input('Enter a number: ')
+
+    while True:
+        if i.isdigit() and int(i) < high and int(i) > low:
+            return i
+            break
+            
+        else:
+            i=input('Enter again: ')
+            continue
 
 
 if __name__ == "__main__":
