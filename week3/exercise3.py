@@ -10,6 +10,8 @@ import random
 
 
 def advancedGuessingGame():
+  print "Welcome to the guessing game!"
+  
     """Play a guessing game with a user.
 
     The exercise here is to rewrite the exampleGuessingGame() function
