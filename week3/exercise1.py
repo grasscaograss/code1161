@@ -77,14 +77,14 @@ def not_number_rejector(message):
     "six", "8!") then throw it out and ask for an actual number.
     When you do get a number, return it.
     """
-    i= input('Enter a number: ')
+    message= input('Enter a number: ')
 
     while True:
-        if i.isdigit()==True:
-            return i
+        if message.isdigit()==True:
+            return message
             break
         else:
-            i=input('Enter again: ')
+            message=input('Enter again: ')
             continue
 
 

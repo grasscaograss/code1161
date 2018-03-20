@@ -245,13 +245,18 @@ def loops_7():
     This is a hard problem. Use lots of experimentation and draw
     lots of diagrams!
     """
-    list_s=[]
-    for a in range (0,5):
-        list_1=[]
-        list_1.append(" "*(4-a)+(2*a+1)*"*"+" "*(4-a))
-        list_s.append(list_1)
-    return list_s
-
+    returnlist7 = []
+    for i in range(0,5):
+        list8 = []
+        for j in range(0,9):
+            list8.append("*")
+            if i + j < 4:
+                list8[j]= " "
+            symbol = i+4
+            if j > symbol:
+                 list8[j] = " "
+        returnlist7.append(list8)
+    return returnlist7 
 
 def lp(some_kind_of_list, exercise_name):
     """Help to see what's going on.
