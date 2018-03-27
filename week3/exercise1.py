@@ -60,7 +60,6 @@ def stubborn_asker(low, high):
     while True:
         if i < high and i > low:
             return i
-            break
         else:
             i=int(input('Enter again: '))
             continue
@@ -80,13 +79,11 @@ def not_number_rejector(message):
     message= input('Enter a number: ')
 
     while True:
-        if message.isdigit()==True:
+        try:
+            message=int(message)
             return message
-            break
-        else:
-            message=input('Enter again: ')
-            continue
-
+        except:
+            message=input('Enter a number: ')
 
 
 def super_asker(low, high):
@@ -98,13 +95,20 @@ def super_asker(low, high):
     i= input('Enter a number: ')
 
     while True:
-        if i.isdigit() and int(i) < high and int(i) > low:
-            return i
-            break
-            
-        else:
+        try:
+            i=int(i)
+            if int(i) < high and int(i) > low:
+                return i
+            else:
+                i=input('Enter again: ')
+                continue
+        except ValueError:
             i=input('Enter again: ')
             continue
+    
+        
+    
+  
 
 
 if __name__ == "__main__":

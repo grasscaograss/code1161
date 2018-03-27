@@ -110,11 +110,21 @@ missedLetters = ''
 correctLetters = ''
 secretWord = getRandomWord(words)
 gameIsDone = False
+#新添加
+leaderboard = []
+player_name=input("Enter your name: ")
+
+
+ab=0
+b=0
+
 while True:
     displayBoard(HANGMANPICS, missedLetters, correctLetters, secretWord)
     # Let the player type in a letter.
     guess = getGuess(missedLetters + correctLetters)
+    ab+=1
     if guess in secretWord:
+        b+=1
         correctLetters = correctLetters + guess
         # Check if the player has won
         foundAllLetters = True
@@ -138,7 +148,18 @@ while True:
                   ' correct guesses, the word was "' + secretWord + '"')
             gameIsDone = True
     # Ask the player if they want to play again (but only if the game is done).
+    
+    def print_leadboard():
+        global leaderboard
+        print ("---LEADBOARD---")
+        for game_dict in leaderboard:
+            for key, value in game_dict.items():
+                print ('{} {}'.format(key, value))
     if gameIsDone:
+        score=b/ab
+        game_dict['name']=player_name
+        game_dict['score']=score
+        leaderboard.append(game_dict)
         if playAgain():
             missedLetters = ''
             correctLetters = ''
