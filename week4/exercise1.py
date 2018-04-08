@@ -37,9 +37,9 @@ def get_some_details():
     json_data = open(LOCAL + "/lazyduck.json").read()
 
     data = json.loads(json_data)
-    return {"lastName":       None,
-            "password":       None,
-            "postcodePlusID": None
+    return {"lastName": data["results"][0]["name"]["last"],
+            "password": data["results"][0]["login"]["password"],
+            "postcodePlusID": str(data["results"][0]["location"]["postcode"]) + data["results"][0]["id"]["value"]
             }
 
 
@@ -79,7 +79,17 @@ def wordy_pyramid():
     ]
     TIP: to add an argument to a URL, use: ?argName=argVal e.g. &minLength=
     """
-    pass
+    import requests
+    list_1=[]
+    for s in range (3,21,2):
+        url = 'http://api.wordnik.com/v4/words.json/randomWords?api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5&minLength={}&maxLength={}&limit=1'.format(s,s)
+        r = requests.get(url)
+        re = r.text
+        list_1.append(re)
+    return list_1
+
+    
+
 
 
 def wunderground():

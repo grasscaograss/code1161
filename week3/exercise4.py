@@ -7,13 +7,12 @@ import math
 
 
 def binary_search(low, high, actual_number):
-  guess=input("Enter a number: ")
-  while True:
-    try:
-      guess=int(guess)
-    except ValueError:
-      guess=input()
-      break
+  guess=(low+high)/2
+  count=0
+  while guess=actual_number:
+    if guess<
+
+    
 
     """Do a binary search.
 
