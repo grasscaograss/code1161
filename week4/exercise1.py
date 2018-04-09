@@ -39,7 +39,7 @@ def get_some_details():
     data = json.loads(json_data)
     return {"lastName": data["results"][0]["name"]["last"],
             "password": data["results"][0]["login"]["password"],
-            "postcodePlusID": str(data["results"][0]["location"]["postcode"]) + data["results"][0]["id"]["value"]
+            "postcodePlusID": data["results"][0]["location"]["postcode"] + int(data["results"][0]["id"]["value"])
             }
 
 
@@ -111,7 +111,7 @@ def wunderground():
          variable and then future access will be easier.
     """
     base = "http://api.wunderground.com/api/"
-    api_key = "93b93f70f855d4b8"
+    api_key = "e04bce537081836d"
     country = "AU"
     city = "Sydney"
     template = "{base}/{key}/conditions/q/{country}/{city}.json"
@@ -120,10 +120,10 @@ def wunderground():
     the_json = json.loads(r.text)
     obs = the_json['current_observation']
 
-    return {"state":           None,
-            "latitude":        None,
-            "longitude":       None,
-            "local_tz_offset": None}
+    return {"state": obs["display_location"]["state"],
+            "latitude":  obs["display_location"]["latitude"],
+            "longitude": obs["display_location"]["longitude"],
+            "local_tz_offset":  obs["local_tz_offset"]}
 
 
 def diarist():
@@ -139,7 +139,11 @@ def diarist():
     TIP: remember to commit 'lasers.pew' and push it to your repo, otherwise
          the test will have nothing to look at.
     """
-    pass
+    import  json 
+    i = open('lasers.pew', 'w')
+    x=6
+    json.dump(x, i)
+
 
 
 if __name__ == "__main__":
