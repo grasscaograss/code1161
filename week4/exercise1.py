@@ -81,11 +81,18 @@ def wordy_pyramid():
     """
     import requests
     list_1=[]
-    for s in range (3,21,2):
+    for s in range (3,20,2):
         url = 'http://api.wordnik.com/v4/words.json/randomWords?api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5&minLength={}&maxLength={}&limit=1'.format(s,s)
         r = requests.get(url)
-        re = r.text
-        list_1.append(re)
+        re = json.loads(r.text)
+        words = re[0]["word"]
+        list_1.append(words)
+    for i in range (20,3,-2):
+        url = 'http://api.wordnik.com/v4/words.json/randomWords?api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5&minLength={}&maxLength={}&limit=1'.format(i,i)
+        w = requests.get(url)
+        we = json.loads(w.text)
+        wwords = we[0]["word"]
+        list_1.append(wwords)
     return list_1
 
     
@@ -104,7 +111,7 @@ def wunderground():
          variable and then future access will be easier.
     """
     base = "http://api.wunderground.com/api/"
-    api_key = "YOUR KEY - REGISTER TO GET ONE"
+    api_key = "93b93f70f855d4b8"
     country = "AU"
     city = "Sydney"
     template = "{base}/{key}/conditions/q/{country}/{city}.json"
