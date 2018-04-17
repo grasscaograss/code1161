@@ -17,7 +17,7 @@ def greet(name="Towering Timmy"):
     return a string of "Hello" and the name argument.
     E.g. if given as "Towering Timmy" it should return "Hello Towering Timmy"
     """
-    pass
+    return ("Hello "+name)
 
 
 def three_counter(input_list=[1, 4, 3, 5, 7, 1, 3, 2, 3, 3, 5, 3, 7]):
@@ -26,7 +26,11 @@ def three_counter(input_list=[1, 4, 3, 5, 7, 1, 3, 2, 3, 3, 5, 3, 7]):
     Return an integer.
     TIP: the test will use a different input_list, so don't just return 5
     """
-    pass
+    count=0
+    for item in input_list:
+        if item == 3:
+            count+=1 
+    return count
 
 
 def fizz_buzz():
@@ -44,7 +48,17 @@ def fizz_buzz():
     if it is. E.g. [1, 2, "Fizz", 4, "Buzz", "Fizz", 7, ...]
     """
     fizzBuzzList = []
-    # your code here
+    for i in range (1,101):
+        
+        if i % 15 == 0:
+            fizzBuzzList.append("FizzBuzz")
+        elif i % 3 == 0:
+            fizzBuzzList.append("Fizz")
+        elif i % 5 == 0:
+            fizzBuzzList.append("Buzz")
+        else:
+            fizzBuzzList.append(i)
+        
     return fizzBuzzList
 
 
@@ -57,7 +71,10 @@ def put_behind_bars(input_string="very naughty boy"):
     TIP: conside using the 'join' method in Python.
     TIP: make sure that you have a pipe on both ends of the string.
     """
-    pass
+    str = "|"
+    seq=(input_string)
+    a="|"+str.join(seq)+"|"
+    return a 
 
 
 def pet_filter(letter="a"):
@@ -70,7 +87,12 @@ def pet_filter(letter="a"):
             "bali cattle", "gayal", "turkey", "goldfish", "rabbit", "koi",
             "canary", "society finch", "fancy mouse", "siamese fighting fish",
             "fancy rat and lab rat", "mink", "red fox", "hedgehog", "guppy"]
-    pass
+    pet_a=[]
+    for i in range(0,len(pets)):
+        if letter in pets[i]:
+            pet_a.append(pets[i])
+    return pet_a
+
 
 
 def best_letter_for_pets():
@@ -80,8 +102,18 @@ def best_letter_for_pets():
     TIP: return just a letter, not the list of animals.
     """
     import string
+    list_1=[]
     the_alphabet = string.ascii_lowercase
-    pass
+    best_letter=""
+    len_number =0
+    for letter in the_alphabet:
+        count = len(pet_filter(letter))
+        if count > len_number:
+            len_number = count
+            best_letter = letter
+    return best_letter
+    
+ 
 
 
 def make_filler_text_dictionary():
@@ -113,8 +145,15 @@ def make_filler_text_dictionary():
     """
     
     import requests
-    return
-
+    dict_1={}
+    for i in range(3,8):
+        dict_1[i]=[]
+        url="http://api.wordnik.com/v4/words.json/randomWords?api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5&minLength={}&maxLength={}&limit=3".format(i,i)
+        r = requests.get(url)  
+        re = json.loads(r.text)
+        words = re[s]["word"]
+        dict_1[i].append(words)
+    return ans
 
 def random_filler_text(number_of_words=200):
     """Make a paragraph of random filler text.
@@ -128,7 +167,12 @@ def random_filler_text(number_of_words=200):
         see line 77 of week4/hangman_leadboard.py for an example.
     """
     import random
-    pass
+    dict_1 = make_filler_text_dictionary()
+    list_1 = []
+    for _ in range(number_of_words):
+        word = dict_1[random.randint(3, 7)][random.randint(0, 2)]
+        list_1.append(word)
+    return " ".join(list_1)
 
 
 def fast_filler(number_of_words=200):
