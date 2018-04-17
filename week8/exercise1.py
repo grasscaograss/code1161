@@ -151,7 +151,7 @@ def make_filler_text_dictionary():
         url="http://api.wordnik.com/v4/words.json/randomWords?api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5&minLength={}&maxLength={}&limit=3".format(i,i)
         r = requests.get(url)  
         re = json.loads(r.text)
-        for s in range(0,3)
+        for s in range(0,3):
         words = re[s]["word"]
         dict_1[i].append(words)
     return ans
