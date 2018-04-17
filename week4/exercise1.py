@@ -140,9 +140,19 @@ def diarist():
          the test will have nothing to look at.
     """
     import  json 
-    i = open('lasers.pew', 'w')
-    x=6
-    json.dump(x, i)
+    count=0
+    file="Trispokedovetiles(laser).gcode"
+    laser=open(file).read()
+    laser_count = laser.split("\n")
+
+    for commond in laser_count:
+        if "M10 P1" in commond:
+            count+=1
+
+    pew_file = 'lasers.pew'
+    with open(pew_file, 'w') as pew:
+        pew.write(str(count))
+    return count
 
 
 

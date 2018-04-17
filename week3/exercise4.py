@@ -7,10 +7,12 @@ import math
 
 
 def binary_search(low, high, actual_number):
+  dic={try=[],"times": }
   guess=(low+high)/2
   count=0
-  while guess=actual_number:
-    if guess<
+  while guess != actual_number:
+    if guess =< actual_number:
+      
 
     
 
